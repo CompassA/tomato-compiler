@@ -8,6 +8,12 @@ add_library(${PROJECT_NAME})
 target_sources(${PROJECT_NAME} 
     PRIVATE 
         TomLexer.cpp
+        TomParserBaseListener.cpp
+        TomParserBaseVisitor.cpp
+        TomParserLexer.cpp
+        TomParserListener.cpp
+        TomParserParser.cpp
+        TomParserVisitor.cpp
 )
 target_include_directories(${PROJECT_NAME} PUBLIC tomato-antlr antlr4-runtime)
 
@@ -18,3 +24,4 @@ set_target_properties(antlr4-lib PROPERTIES IMPORTED_LOCATION ${ANTLR4_LIB_PATH}
 target_link_libraries(${PROJECT_NAME} PUBLIC antlr4-lib) 
 
 tomato_test(test/lexer_test.cpp)
+tomato_test(test/parser_test.cpp)
