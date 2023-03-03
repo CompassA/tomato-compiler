@@ -1,18 +1,14 @@
-/*
- * @Author: Tomato
- * @Date: 2023-02-20 23:05:36
- * @LastEditTime: 2023-02-20 23:36:55
- */
 
-// Generated from TomLexer.g4 by ANTLR 4.11.1
+// Generated from TomLexer.g4 by ANTLR 4.12.0
 
 #pragma once
 
 
-#include <antlr4-runtime.h>
+#include "antlr4-runtime.h"
 
 
 namespace tomato {
+
 
 class  TomLexer : public antlr4::Lexer {
 public:
@@ -72,4 +68,4 @@ private:
 
 };
 
-};
+}  // namespace tomato

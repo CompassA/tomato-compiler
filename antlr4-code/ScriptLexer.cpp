@@ -1,20 +1,21 @@
 
-// Generated from TomParser.g4 by ANTLR 4.12.0
+// Generated from Script.g4 by ANTLR 4.12.0
 
 
-#include <TomParserLexer.h>
+#include "ScriptLexer.h"
 
 
 using namespace antlr4;
 
+using namespace tomato;
 
 
 using namespace antlr4;
 
 namespace {
 
-struct TomParserLexerStaticData final {
-  TomParserLexerStaticData(std::vector<std::string> ruleNames,
+struct ScriptLexerStaticData final {
+  ScriptLexerStaticData(std::vector<std::string> ruleNames,
                           std::vector<std::string> channelNames,
                           std::vector<std::string> modeNames,
                           std::vector<std::string> literalNames,
@@ -24,10 +25,10 @@ struct TomParserLexerStaticData final {
         symbolicNames(std::move(symbolicNames)),
         vocabulary(this->literalNames, this->symbolicNames) {}
 
-  TomParserLexerStaticData(const TomParserLexerStaticData&) = delete;
-  TomParserLexerStaticData(TomParserLexerStaticData&&) = delete;
-  TomParserLexerStaticData& operator=(const TomParserLexerStaticData&) = delete;
-  TomParserLexerStaticData& operator=(TomParserLexerStaticData&&) = delete;
+  ScriptLexerStaticData(const ScriptLexerStaticData&) = delete;
+  ScriptLexerStaticData(ScriptLexerStaticData&&) = delete;
+  ScriptLexerStaticData& operator=(const ScriptLexerStaticData&) = delete;
+  ScriptLexerStaticData& operator=(ScriptLexerStaticData&&) = delete;
 
   std::vector<antlr4::dfa::DFA> decisionToDFA;
   antlr4::atn::PredictionContextCache sharedContextCache;
@@ -41,12 +42,12 @@ struct TomParserLexerStaticData final {
   std::unique_ptr<antlr4::atn::ATN> atn;
 };
 
-::antlr4::internal::OnceFlag tomparserlexerLexerOnceFlag;
-TomParserLexerStaticData *tomparserlexerLexerStaticData = nullptr;
+::antlr4::internal::OnceFlag scriptlexerLexerOnceFlag;
+ScriptLexerStaticData *scriptlexerLexerStaticData = nullptr;
 
-void tomparserlexerLexerInitialize() {
-  assert(tomparserlexerLexerStaticData == nullptr);
-  auto staticData = std::make_unique<TomParserLexerStaticData>(
+void scriptlexerLexerInitialize() {
+  assert(scriptlexerLexerStaticData == nullptr);
+  auto staticData = std::make_unique<ScriptLexerStaticData>(
     std::vector<std::string>{
       "ABSTRACT", "ASSERT", "BOOLEAN", "BREAK", "BYTE", "CASE", "CATCH", 
       "CHAR", "CLASS", "CONST", "CONTINUE", "DEFAULT", "DO", "DOUBLE", "ELSE", 
@@ -452,51 +453,51 @@ void tomparserlexerLexerInitialize() {
   for (size_t i = 0; i < count; i++) { 
     staticData->decisionToDFA.emplace_back(staticData->atn->getDecisionState(i), i);
   }
-  tomparserlexerLexerStaticData = staticData.release();
+  scriptlexerLexerStaticData = staticData.release();
 }
 
 }
 
-TomParserLexer::TomParserLexer(CharStream *input) : Lexer(input) {
-  TomParserLexer::initialize();
-  _interpreter = new atn::LexerATNSimulator(this, *tomparserlexerLexerStaticData->atn, tomparserlexerLexerStaticData->decisionToDFA, tomparserlexerLexerStaticData->sharedContextCache);
+ScriptLexer::ScriptLexer(CharStream *input) : Lexer(input) {
+  ScriptLexer::initialize();
+  _interpreter = new atn::LexerATNSimulator(this, *scriptlexerLexerStaticData->atn, scriptlexerLexerStaticData->decisionToDFA, scriptlexerLexerStaticData->sharedContextCache);
 }
 
-TomParserLexer::~TomParserLexer() {
+ScriptLexer::~ScriptLexer() {
   delete _interpreter;
 }
 
-std::string TomParserLexer::getGrammarFileName() const {
-  return "TomParser.g4";
+std::string ScriptLexer::getGrammarFileName() const {
+  return "Script.g4";
 }
 
-const std::vector<std::string>& TomParserLexer::getRuleNames() const {
-  return tomparserlexerLexerStaticData->ruleNames;
+const std::vector<std::string>& ScriptLexer::getRuleNames() const {
+  return scriptlexerLexerStaticData->ruleNames;
 }
 
-const std::vector<std::string>& TomParserLexer::getChannelNames() const {
-  return tomparserlexerLexerStaticData->channelNames;
+const std::vector<std::string>& ScriptLexer::getChannelNames() const {
+  return scriptlexerLexerStaticData->channelNames;
 }
 
-const std::vector<std::string>& TomParserLexer::getModeNames() const {
-  return tomparserlexerLexerStaticData->modeNames;
+const std::vector<std::string>& ScriptLexer::getModeNames() const {
+  return scriptlexerLexerStaticData->modeNames;
 }
 
-const dfa::Vocabulary& TomParserLexer::getVocabulary() const {
-  return tomparserlexerLexerStaticData->vocabulary;
+const dfa::Vocabulary& ScriptLexer::getVocabulary() const {
+  return scriptlexerLexerStaticData->vocabulary;
 }
 
-antlr4::atn::SerializedATNView TomParserLexer::getSerializedATN() const {
-  return tomparserlexerLexerStaticData->serializedATN;
+antlr4::atn::SerializedATNView ScriptLexer::getSerializedATN() const {
+  return scriptlexerLexerStaticData->serializedATN;
 }
 
-const atn::ATN& TomParserLexer::getATN() const {
-  return *tomparserlexerLexerStaticData->atn;
+const atn::ATN& ScriptLexer::getATN() const {
+  return *scriptlexerLexerStaticData->atn;
 }
 
 
 
 
-void TomParserLexer::initialize() {
-  ::antlr4::internal::call_once(tomparserlexerLexerOnceFlag, tomparserlexerLexerInitialize);
+void ScriptLexer::initialize() {
+  ::antlr4::internal::call_once(scriptlexerLexerOnceFlag, scriptlexerLexerInitialize);
 }

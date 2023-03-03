@@ -1,21 +1,21 @@
 project(antlr4-code)
 
 if (APPLE)
-    SET(ANTLR4_LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/mac)
+    SET(ANTLR4_LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib/antlr4/mac)
 endif()
 
-add_library(${PROJECT_NAME})
+add_library(${PROJECT_NAME} STATIC)
 target_sources(${PROJECT_NAME} 
     PRIVATE 
         TomLexer.cpp
-        TomParserBaseListener.cpp
-        TomParserBaseVisitor.cpp
-        TomParserLexer.cpp
-        TomParserListener.cpp
-        TomParserParser.cpp
-        TomParserVisitor.cpp
+        ScriptBaseListener.cpp
+        ScriptBaseVisitor.cpp
+        ScriptLexer.cpp
+        ScriptListener.cpp
+        ScriptParser.cpp
+        ScriptVisitor.cpp
 )
-target_include_directories(${PROJECT_NAME} PUBLIC tomato-antlr antlr4-runtime)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} antlr4-runtime)
 
 
 add_library(antlr4-lib STATIC IMPORTED)

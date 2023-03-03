@@ -1,4 +1,4 @@
-grammar TomParser;
+grammar Script;
 
 import TomLexer;
 

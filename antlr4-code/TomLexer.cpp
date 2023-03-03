@@ -1,17 +1,18 @@
 
-// Generated from TomLexer.g4 by ANTLR 4.11.1
+// Generated from TomLexer.g4 by ANTLR 4.12.0
 
 
-#include <TomLexer.h>
-
-
-using namespace antlr4;
-
+#include "TomLexer.h"
 
 
 using namespace antlr4;
 
-namespace tomato {
+using namespace tomato;
+
+
+using namespace antlr4;
+
+namespace {
 
 struct TomLexerStaticData final {
   TomLexerStaticData(std::vector<std::string> ruleNames,
@@ -455,6 +456,8 @@ void tomlexerLexerInitialize() {
   tomlexerLexerStaticData = staticData.release();
 }
 
+}
+
 TomLexer::TomLexer(CharStream *input) : Lexer(input) {
   TomLexer::initialize();
   _interpreter = new atn::LexerATNSimulator(this, *tomlexerLexerStaticData->atn, tomlexerLexerStaticData->decisionToDFA, tomlexerLexerStaticData->sharedContextCache);
@@ -497,8 +500,4 @@ const atn::ATN& TomLexer::getATN() const {
 
 void TomLexer::initialize() {
   ::antlr4::internal::call_once(tomlexerLexerOnceFlag, tomlexerLexerInitialize);
-}
-
-
-
 }

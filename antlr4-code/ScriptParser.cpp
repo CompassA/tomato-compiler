@@ -1,36 +1,32 @@
-/*
- * @Author: Tomato
- * @Date: 2023-02-21 23:28:16
- * @LastEditTime: 2023-02-21 23:30:30
- */
 
-// Generated from TomParser.g4 by ANTLR 4.12.0
+// Generated from Script.g4 by ANTLR 4.12.0
 
 
-#include <TomParserListener.h>
-#include <TomParserVisitor.h>
+#include "ScriptListener.h"
+#include "ScriptVisitor.h"
 
-#include <TomParserParser.h>
+#include "ScriptParser.h"
 
 
 using namespace antlrcpp;
+using namespace tomato;
 
 using namespace antlr4;
 
 namespace {
 
-struct TomParserParserStaticData final {
-  TomParserParserStaticData(std::vector<std::string> ruleNames,
+struct ScriptParserStaticData final {
+  ScriptParserStaticData(std::vector<std::string> ruleNames,
                         std::vector<std::string> literalNames,
                         std::vector<std::string> symbolicNames)
       : ruleNames(std::move(ruleNames)), literalNames(std::move(literalNames)),
         symbolicNames(std::move(symbolicNames)),
         vocabulary(this->literalNames, this->symbolicNames) {}
 
-  TomParserParserStaticData(const TomParserParserStaticData&) = delete;
-  TomParserParserStaticData(TomParserParserStaticData&&) = delete;
-  TomParserParserStaticData& operator=(const TomParserParserStaticData&) = delete;
-  TomParserParserStaticData& operator=(TomParserParserStaticData&&) = delete;
+  ScriptParserStaticData(const ScriptParserStaticData&) = delete;
+  ScriptParserStaticData(ScriptParserStaticData&&) = delete;
+  ScriptParserStaticData& operator=(const ScriptParserStaticData&) = delete;
+  ScriptParserStaticData& operator=(ScriptParserStaticData&&) = delete;
 
   std::vector<antlr4::dfa::DFA> decisionToDFA;
   antlr4::atn::PredictionContextCache sharedContextCache;
@@ -42,12 +38,12 @@ struct TomParserParserStaticData final {
   std::unique_ptr<antlr4::atn::ATN> atn;
 };
 
-::antlr4::internal::OnceFlag tomparserParserOnceFlag;
-TomParserParserStaticData *tomparserParserStaticData = nullptr;
+::antlr4::internal::OnceFlag scriptParserOnceFlag;
+ScriptParserStaticData *scriptParserStaticData = nullptr;
 
-void tomparserParserInitialize() {
-  assert(tomparserParserStaticData == nullptr);
-  auto staticData = std::make_unique<TomParserParserStaticData>(
+void scriptParserInitialize() {
+  assert(scriptParserStaticData == nullptr);
+  auto staticData = std::make_unique<ScriptParserStaticData>(
     std::vector<std::string>{
       "expr", "primary"
     },
@@ -111,151 +107,151 @@ void tomparserParserInitialize() {
   for (size_t i = 0; i < count; i++) { 
     staticData->decisionToDFA.emplace_back(staticData->atn->getDecisionState(i), i);
   }
-  tomparserParserStaticData = staticData.release();
+  scriptParserStaticData = staticData.release();
 }
 
 }
 
-TomParserParser::TomParserParser(TokenStream *input) : TomParserParser(input, antlr4::atn::ParserATNSimulatorOptions()) {}
+ScriptParser::ScriptParser(TokenStream *input) : ScriptParser(input, antlr4::atn::ParserATNSimulatorOptions()) {}
 
-TomParserParser::TomParserParser(TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options) : Parser(input) {
-  TomParserParser::initialize();
-  _interpreter = new atn::ParserATNSimulator(this, *tomparserParserStaticData->atn, tomparserParserStaticData->decisionToDFA, tomparserParserStaticData->sharedContextCache, options);
+ScriptParser::ScriptParser(TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options) : Parser(input) {
+  ScriptParser::initialize();
+  _interpreter = new atn::ParserATNSimulator(this, *scriptParserStaticData->atn, scriptParserStaticData->decisionToDFA, scriptParserStaticData->sharedContextCache, options);
 }
 
-TomParserParser::~TomParserParser() {
+ScriptParser::~ScriptParser() {
   delete _interpreter;
 }
 
-const atn::ATN& TomParserParser::getATN() const {
-  return *tomparserParserStaticData->atn;
+const atn::ATN& ScriptParser::getATN() const {
+  return *scriptParserStaticData->atn;
 }
 
-std::string TomParserParser::getGrammarFileName() const {
-  return "TomParser.g4";
+std::string ScriptParser::getGrammarFileName() const {
+  return "Script.g4";
 }
 
-const std::vector<std::string>& TomParserParser::getRuleNames() const {
-  return tomparserParserStaticData->ruleNames;
+const std::vector<std::string>& ScriptParser::getRuleNames() const {
+  return scriptParserStaticData->ruleNames;
 }
 
-const dfa::Vocabulary& TomParserParser::getVocabulary() const {
-  return tomparserParserStaticData->vocabulary;
+const dfa::Vocabulary& ScriptParser::getVocabulary() const {
+  return scriptParserStaticData->vocabulary;
 }
 
-antlr4::atn::SerializedATNView TomParserParser::getSerializedATN() const {
-  return tomparserParserStaticData->serializedATN;
+antlr4::atn::SerializedATNView ScriptParser::getSerializedATN() const {
+  return scriptParserStaticData->serializedATN;
 }
 
 
 //----------------- ExprContext ------------------------------------------------------------------
 
-TomParserParser::ExprContext::ExprContext(ParserRuleContext *parent, size_t invokingState)
+ScriptParser::ExprContext::ExprContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-TomParserParser::PrimaryContext* TomParserParser::ExprContext::primary() {
-  return getRuleContext<TomParserParser::PrimaryContext>(0);
+ScriptParser::PrimaryContext* ScriptParser::ExprContext::primary() {
+  return getRuleContext<ScriptParser::PrimaryContext>(0);
 }
 
-std::vector<TomParserParser::ExprContext *> TomParserParser::ExprContext::expr() {
-  return getRuleContexts<TomParserParser::ExprContext>();
+std::vector<ScriptParser::ExprContext *> ScriptParser::ExprContext::expr() {
+  return getRuleContexts<ScriptParser::ExprContext>();
 }
 
-TomParserParser::ExprContext* TomParserParser::ExprContext::expr(size_t i) {
-  return getRuleContext<TomParserParser::ExprContext>(i);
+ScriptParser::ExprContext* ScriptParser::ExprContext::expr(size_t i) {
+  return getRuleContext<ScriptParser::ExprContext>(i);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::MUL() {
-  return getToken(TomParserParser::MUL, 0);
+tree::TerminalNode* ScriptParser::ExprContext::MUL() {
+  return getToken(ScriptParser::MUL, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::DIV() {
-  return getToken(TomParserParser::DIV, 0);
+tree::TerminalNode* ScriptParser::ExprContext::DIV() {
+  return getToken(ScriptParser::DIV, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::MOD() {
-  return getToken(TomParserParser::MOD, 0);
+tree::TerminalNode* ScriptParser::ExprContext::MOD() {
+  return getToken(ScriptParser::MOD, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::ADD() {
-  return getToken(TomParserParser::ADD, 0);
+tree::TerminalNode* ScriptParser::ExprContext::ADD() {
+  return getToken(ScriptParser::ADD, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::SUB() {
-  return getToken(TomParserParser::SUB, 0);
+tree::TerminalNode* ScriptParser::ExprContext::SUB() {
+  return getToken(ScriptParser::SUB, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::GT() {
-  return getToken(TomParserParser::GT, 0);
+tree::TerminalNode* ScriptParser::ExprContext::GT() {
+  return getToken(ScriptParser::GT, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::LT() {
-  return getToken(TomParserParser::LT, 0);
+tree::TerminalNode* ScriptParser::ExprContext::LT() {
+  return getToken(ScriptParser::LT, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::LE() {
-  return getToken(TomParserParser::LE, 0);
+tree::TerminalNode* ScriptParser::ExprContext::LE() {
+  return getToken(ScriptParser::LE, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::GE() {
-  return getToken(TomParserParser::GE, 0);
+tree::TerminalNode* ScriptParser::ExprContext::GE() {
+  return getToken(ScriptParser::GE, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::EQUAL() {
-  return getToken(TomParserParser::EQUAL, 0);
+tree::TerminalNode* ScriptParser::ExprContext::EQUAL() {
+  return getToken(ScriptParser::EQUAL, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::NOTEQUAL() {
-  return getToken(TomParserParser::NOTEQUAL, 0);
+tree::TerminalNode* ScriptParser::ExprContext::NOTEQUAL() {
+  return getToken(ScriptParser::NOTEQUAL, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::AND() {
-  return getToken(TomParserParser::AND, 0);
+tree::TerminalNode* ScriptParser::ExprContext::AND() {
+  return getToken(ScriptParser::AND, 0);
 }
 
-tree::TerminalNode* TomParserParser::ExprContext::OR() {
-  return getToken(TomParserParser::OR, 0);
+tree::TerminalNode* ScriptParser::ExprContext::OR() {
+  return getToken(ScriptParser::OR, 0);
 }
 
 
-size_t TomParserParser::ExprContext::getRuleIndex() const {
-  return TomParserParser::RuleExpr;
+size_t ScriptParser::ExprContext::getRuleIndex() const {
+  return ScriptParser::RuleExpr;
 }
 
-void TomParserParser::ExprContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<TomParserListener *>(listener);
+void ScriptParser::ExprContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<ScriptListener *>(listener);
   if (parserListener != nullptr)
     parserListener->enterExpr(this);
 }
 
-void TomParserParser::ExprContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<TomParserListener *>(listener);
+void ScriptParser::ExprContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<ScriptListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitExpr(this);
 }
 
 
-std::any TomParserParser::ExprContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<TomParserVisitor*>(visitor))
+std::any ScriptParser::ExprContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<ScriptVisitor*>(visitor))
     return parserVisitor->visitExpr(this);
   else
     return visitor->visitChildren(this);
 }
 
 
-TomParserParser::ExprContext* TomParserParser::expr() {
+ScriptParser::ExprContext* ScriptParser::expr() {
    return expr(0);
 }
 
-TomParserParser::ExprContext* TomParserParser::expr(int precedence) {
+ScriptParser::ExprContext* ScriptParser::expr(int precedence) {
   ParserRuleContext *parentContext = _ctx;
   size_t parentState = getState();
-  TomParserParser::ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, parentState);
-  TomParserParser::ExprContext *previousContext = _localctx;
+  ScriptParser::ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, parentState);
+  ScriptParser::ExprContext *previousContext = _localctx;
   (void)previousContext; // Silence compiler, in case the context is not used by generated code.
   size_t startState = 0;
-  enterRecursionRule(_localctx, 0, TomParserParser::RuleExpr, precedence);
+  enterRecursionRule(_localctx, 0, ScriptParser::RuleExpr, precedence);
 
     size_t _la = 0;
 
@@ -314,9 +310,9 @@ TomParserParser::ExprContext* TomParserParser::expr(int precedence) {
           setState(11);
           antlrcpp::downCast<ExprContext *>(_localctx)->bop = _input->LT(1);
           _la = _input->LA(1);
-          if (!(_la == TomParserParser::ADD
+          if (!(_la == ScriptParser::ADD
 
-          || _la == TomParserParser::SUB)) {
+          || _la == ScriptParser::SUB)) {
             antlrcpp::downCast<ExprContext *>(_localctx)->bop = _errHandler->recoverInline(this);
           }
           else {
@@ -359,9 +355,9 @@ TomParserParser::ExprContext* TomParserParser::expr(int precedence) {
           setState(17);
           antlrcpp::downCast<ExprContext *>(_localctx)->bop = _input->LT(1);
           _la = _input->LA(1);
-          if (!(_la == TomParserParser::AND
+          if (!(_la == ScriptParser::AND
 
-          || _la == TomParserParser::OR)) {
+          || _la == ScriptParser::OR)) {
             antlrcpp::downCast<ExprContext *>(_localctx)->bop = _errHandler->recoverInline(this);
           }
           else {
@@ -392,62 +388,62 @@ TomParserParser::ExprContext* TomParserParser::expr(int precedence) {
 
 //----------------- PrimaryContext ------------------------------------------------------------------
 
-TomParserParser::PrimaryContext::PrimaryContext(ParserRuleContext *parent, size_t invokingState)
+ScriptParser::PrimaryContext::PrimaryContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* TomParserParser::PrimaryContext::DECIMAL_LITERAL() {
-  return getToken(TomParserParser::DECIMAL_LITERAL, 0);
+tree::TerminalNode* ScriptParser::PrimaryContext::DECIMAL_LITERAL() {
+  return getToken(ScriptParser::DECIMAL_LITERAL, 0);
 }
 
-tree::TerminalNode* TomParserParser::PrimaryContext::STRING_LITERAL() {
-  return getToken(TomParserParser::STRING_LITERAL, 0);
+tree::TerminalNode* ScriptParser::PrimaryContext::STRING_LITERAL() {
+  return getToken(ScriptParser::STRING_LITERAL, 0);
 }
 
-tree::TerminalNode* TomParserParser::PrimaryContext::IDENTIFIER() {
-  return getToken(TomParserParser::IDENTIFIER, 0);
+tree::TerminalNode* ScriptParser::PrimaryContext::IDENTIFIER() {
+  return getToken(ScriptParser::IDENTIFIER, 0);
 }
 
-tree::TerminalNode* TomParserParser::PrimaryContext::LPAREN() {
-  return getToken(TomParserParser::LPAREN, 0);
+tree::TerminalNode* ScriptParser::PrimaryContext::LPAREN() {
+  return getToken(ScriptParser::LPAREN, 0);
 }
 
-TomParserParser::ExprContext* TomParserParser::PrimaryContext::expr() {
-  return getRuleContext<TomParserParser::ExprContext>(0);
+ScriptParser::ExprContext* ScriptParser::PrimaryContext::expr() {
+  return getRuleContext<ScriptParser::ExprContext>(0);
 }
 
-tree::TerminalNode* TomParserParser::PrimaryContext::RPAREN() {
-  return getToken(TomParserParser::RPAREN, 0);
+tree::TerminalNode* ScriptParser::PrimaryContext::RPAREN() {
+  return getToken(ScriptParser::RPAREN, 0);
 }
 
 
-size_t TomParserParser::PrimaryContext::getRuleIndex() const {
-  return TomParserParser::RulePrimary;
+size_t ScriptParser::PrimaryContext::getRuleIndex() const {
+  return ScriptParser::RulePrimary;
 }
 
-void TomParserParser::PrimaryContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<TomParserListener *>(listener);
+void ScriptParser::PrimaryContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<ScriptListener *>(listener);
   if (parserListener != nullptr)
     parserListener->enterPrimary(this);
 }
 
-void TomParserParser::PrimaryContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<TomParserListener *>(listener);
+void ScriptParser::PrimaryContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<ScriptListener *>(listener);
   if (parserListener != nullptr)
     parserListener->exitPrimary(this);
 }
 
 
-std::any TomParserParser::PrimaryContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<TomParserVisitor*>(visitor))
+std::any ScriptParser::PrimaryContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<ScriptVisitor*>(visitor))
     return parserVisitor->visitPrimary(this);
   else
     return visitor->visitChildren(this);
 }
 
-TomParserParser::PrimaryContext* TomParserParser::primary() {
+ScriptParser::PrimaryContext* ScriptParser::primary() {
   PrimaryContext *_localctx = _tracker.createInstance<PrimaryContext>(_ctx, getState());
-  enterRule(_localctx, 2, TomParserParser::RulePrimary);
+  enterRule(_localctx, 2, ScriptParser::RulePrimary);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -460,35 +456,35 @@ TomParserParser::PrimaryContext* TomParserParser::primary() {
     setState(31);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
-      case TomParserParser::DECIMAL_LITERAL: {
+      case ScriptParser::DECIMAL_LITERAL: {
         enterOuterAlt(_localctx, 1);
         setState(24);
-        match(TomParserParser::DECIMAL_LITERAL);
+        match(ScriptParser::DECIMAL_LITERAL);
         break;
       }
 
-      case TomParserParser::STRING_LITERAL: {
+      case ScriptParser::STRING_LITERAL: {
         enterOuterAlt(_localctx, 2);
         setState(25);
-        match(TomParserParser::STRING_LITERAL);
+        match(ScriptParser::STRING_LITERAL);
         break;
       }
 
-      case TomParserParser::IDENTIFIER: {
+      case ScriptParser::IDENTIFIER: {
         enterOuterAlt(_localctx, 3);
         setState(26);
-        match(TomParserParser::IDENTIFIER);
+        match(ScriptParser::IDENTIFIER);
         break;
       }
 
-      case TomParserParser::LPAREN: {
+      case ScriptParser::LPAREN: {
         enterOuterAlt(_localctx, 4);
         setState(27);
-        match(TomParserParser::LPAREN);
+        match(ScriptParser::LPAREN);
         setState(28);
         expr(0);
         setState(29);
-        match(TomParserParser::RPAREN);
+        match(ScriptParser::RPAREN);
         break;
       }
 
@@ -506,7 +502,7 @@ TomParserParser::PrimaryContext* TomParserParser::primary() {
   return _localctx;
 }
 
-bool TomParserParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
+bool ScriptParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
   switch (ruleIndex) {
     case 0: return exprSempred(antlrcpp::downCast<ExprContext *>(context), predicateIndex);
 
@@ -516,7 +512,7 @@ bool TomParserParser::sempred(RuleContext *context, size_t ruleIndex, size_t pre
   return true;
 }
 
-bool TomParserParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
+bool ScriptParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
     case 0: return precpred(_ctx, 4);
     case 1: return precpred(_ctx, 3);
@@ -529,6 +525,6 @@ bool TomParserParser::exprSempred(ExprContext *_localctx, size_t predicateIndex)
   return true;
 }
 
-void TomParserParser::initialize() {
-  ::antlr4::internal::call_once(tomparserParserOnceFlag, tomparserParserInitialize);
+void ScriptParser::initialize() {
+  ::antlr4::internal::call_once(scriptParserOnceFlag, scriptParserInitialize);
 }

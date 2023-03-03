@@ -1,15 +1,16 @@
 
-// Generated from TomParser.g4 by ANTLR 4.12.0
+// Generated from Script.g4 by ANTLR 4.12.0
 
 #pragma once
 
 
-#include <antlr4-runtime.h>
+#include "antlr4-runtime.h"
 
 
+namespace tomato {
 
 
-class  TomParserParser : public antlr4::Parser {
+class  ScriptParser : public antlr4::Parser {
 public:
   enum {
     ABSTRACT = 1, ASSERT = 2, BOOLEAN = 3, BREAK = 4, BYTE = 5, CASE = 6, 
@@ -39,11 +40,11 @@ public:
     RuleExpr = 0, RulePrimary = 1
   };
 
-  explicit TomParserParser(antlr4::TokenStream *input);
+  explicit ScriptParser(antlr4::TokenStream *input);
 
-  TomParserParser(antlr4::TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options);
+  ScriptParser(antlr4::TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options);
 
-  ~TomParserParser() override;
+  ~ScriptParser() override;
 
   std::string getGrammarFileName() const override;
 
@@ -123,3 +124,4 @@ public:
 private:
 };
 
+}  // namespace tomato

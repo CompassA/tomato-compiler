@@ -16,3 +16,4 @@ include(CPack)
 
 add_subdirectory(googletest)
 add_subdirectory(antlr4-code)
+add_subdirectory(core)
