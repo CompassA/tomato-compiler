@@ -1,7 +1,11 @@
 project(antlr4-code)
 
 if (APPLE)
+    message("OS: APPLE")
     SET(ANTLR4_LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib/antlr4/mac)
+elseif (CMAKE_HOST_LINUX)
+    message("OS: LINUX")
+    SET(ANTLR4_LIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib/antlr4/linux)
 endif()
 
 add_library(${PROJECT_NAME} STATIC)
