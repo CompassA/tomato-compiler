@@ -8,7 +8,7 @@ statement
     | IF '(' expr ')' statement (ELSE statement)?
     | WHILE '(' expr ')' statement
     | FOR '(' (variableDeclarator | expr)? ';' expr? ';' exprList? ')' statement
-    | DO statement WHILE '(' epxr ')' ';'
+    | DO statement WHILE '(' expr ')' ';'
     | RETURN expr ';'
     | BREAK ';'
     | CONTINUE ';'
@@ -45,10 +45,11 @@ primitiveType
 
 exprList
     : expr (',' expr)*
+    ;
 
 expr
     : primary
-    | expr bop=(DOT) funcCall
+    | expr bop=DOT (funcCall)
     | expr bop=(MUL|DIV|MOD) expr
     | expr bop=(ADD|SUB) expr
     | expr bop=(GT|LT|LE|GE|EQUAL|NOTEQUAL) expr

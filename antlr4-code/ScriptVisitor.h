@@ -1,5 +1,5 @@
 
-// Generated from Script.g4 by ANTLR 4.12.0
+// Generated from ../antlr4-code/Script.g4 by ANTLR 4.12.0
 
 #pragma once
 
@@ -20,7 +20,23 @@ public:
   /**
    * Visit parse trees produced by ScriptParser.
    */
+    virtual std::any visitStatement(ScriptParser::StatementContext *context) = 0;
+
+    virtual std::any visitBlock(ScriptParser::BlockContext *context) = 0;
+
+    virtual std::any visitVariableDeclarator(ScriptParser::VariableDeclaratorContext *context) = 0;
+
+    virtual std::any visitType(ScriptParser::TypeContext *context) = 0;
+
+    virtual std::any visitPrimitiveType(ScriptParser::PrimitiveTypeContext *context) = 0;
+
+    virtual std::any visitExprList(ScriptParser::ExprListContext *context) = 0;
+
     virtual std::any visitExpr(ScriptParser::ExprContext *context) = 0;
+
+    virtual std::any visitFuncDef(ScriptParser::FuncDefContext *context) = 0;
+
+    virtual std::any visitFuncCall(ScriptParser::FuncCallContext *context) = 0;
 
     virtual std::any visitPrimary(ScriptParser::PrimaryContext *context) = 0;
 
